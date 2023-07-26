@@ -2,6 +2,8 @@ package com.example.navdrawer
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
+import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -29,6 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
+        val header=navView.getHeaderView(0)
+        val text=header.findViewById<TextView>(R.id.name)
+        text.text="RAM"
+
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
